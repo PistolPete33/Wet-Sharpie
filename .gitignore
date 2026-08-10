@@ -1,0 +1,6 @@
+odds_api_key.txt
+*.joblib
+data/
+models/
+__pycache__/
+*.pyc
