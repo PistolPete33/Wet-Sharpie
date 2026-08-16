@@ -25,7 +25,7 @@ body{background:#0F1923;color:#E8EDF2;font-family:'Inter',system-ui,sans-serif;m
 <body>
 <div class="header">
   <div class="logo">WET <span>SHARPIE</span></div>
-  <div class="meta">Updated Aug 16, 2026 12:01 PM &nbsp;·&nbsp; 2026-08-16</div>
+  <div class="meta">Updated Aug 16, 2026 12:09 PM &nbsp;·&nbsp; 2026-08-16</div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="show('today',this)">Today's Bets</div>
@@ -33,7 +33,982 @@ body{background:#0F1923;color:#E8EDF2;font-family:'Inter',system-ui,sans-serif;m
   <div class="tab" onclick="show('snapshot',this)">📸 Snapshot</div>
 </div>
 <div id="today" class="panel active">
-  <div style="color:#4A5568;text-align:center;padding:60px">No predictions file found for today. Run python 04_predict.py first.</div>
+  <div class="disclaimer">⚠ Model estimates only — not financial advice. Best Bets = high confidence + price -200 or better. Strong Picks = high confidence but price too steep to bet. YRFI/NRFI is informational only.<br>Track before trusting.</div><div style="color:#F5A623;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 10px">⭐ Best Bets — confidence + price qualifies</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;STL at CHC&quot;, &quot;pick&quot;: &quot;CHC&quot;, &quot;pick_logo&quot;: &quot;chc&quot;, &quot;away_logo&quot;: &quot;stl&quot;, &quot;home_logo&quot;: &quot;chc&quot;, &quot;tier&quot;: &quot;A&quot;, &quot;conf&quot;: 62, &quot;prob&quot;: &quot;62.3%&quot;, &quot;pick_odds&quot;: &quot;-174.0&quot;, &quot;away_sp&quot;: &quot;Hunter Dobbins&quot;, &quot;home_sp&quot;: &quot;Edward Cabrera&quot;, &quot;narrative&quot;: [&quot;CHC benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;62.3%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;62.5%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;-0.2&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.1&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 9.0 (+103)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 53%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;STL 4.1 at CHC 5.1&quot;, &quot;ou_lean&quot;: &quot;OVER 0.1 runs (proj 9.1 vs line 9.0)&quot;}"
+style="background:#14202C;border:1px solid #F5A623;border-left:3px solid #F5A623;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#F5A623'"
+onmouseleave="this.style.borderColor='#F5A623'"
+onmouseleave="this.style.borderColor='#F5A623';this.style.borderLeftColor='#F5A623'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/stl.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="STL">
+        <span style="color:#8A9BAD;font-size:11px">STL</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/chc.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CHC">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">CHC</span>
+        <span style="background:#F5A623;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">HIGH</span>
+        <span style="background:rgba(245,166,35,0.15);color:#F5A623;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">BEST BET</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Hunter Dobbins <span style="color:#4A5568">vs</span> Edward Cabrera
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:62%;height:100%;background:#F5A623;border-radius:2px"></div>
+        </div>
+        <span style="color:#F5A623;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">62% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/chc.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CHC">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          CHC
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-174.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">STL 4.1 at CHC 5.1</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.1</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">1.0</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 53%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.1 runs (proj 9.1 vs line 9.0)">O 9.0 (+103)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">62.5%</div></div>
+  </div>
+</div><div style="color:#27AE60;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:20px 0 10px">EV Bets</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;MIL at LAD&quot;, &quot;pick&quot;: &quot;MIL&quot;, &quot;pick_logo&quot;: &quot;mil&quot;, &quot;away_logo&quot;: &quot;mil&quot;, &quot;home_logo&quot;: &quot;lad&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 50, &quot;prob&quot;: &quot;49.8%&quot;, &quot;pick_odds&quot;: &quot;167.0&quot;, &quot;away_sp&quot;: &quot;Logan Henderson&quot;, &quot;home_sp&quot;: &quot;Tarik Skubal&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors MIL, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;49.8%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;62.6%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;12.8&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.1&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 7.5 (+107)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 54%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;MIL 4.0 at LAD 4.2&quot;, &quot;ou_lean&quot;: &quot;OVER 0.6 runs (proj 8.1 vs line 7.5)&quot;}"
+style="background:#14202C;border:1px solid #27AE60;border-left:3px solid #27AE60;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#27AE60'"
+onmouseleave="this.style.borderColor='#27AE60';this.style.borderLeftColor='#27AE60'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/mil.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="MIL">
+        <span style="color:#8A9BAD;font-size:11px">MIL</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/lad.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="LAD">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">LAD</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(39,174,96,0.15);color:#27AE60;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">EV +8.5%</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Logan Henderson <span style="color:#4A5568">vs</span> Tarik Skubal
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:50%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">50% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/mil.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="MIL">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          MIL
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>167.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">MIL 4.0 at LAD 4.2</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.1</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.2</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 54%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.6 runs (proj 8.1 vs line 7.5)">O 7.5 (+107)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">62.6%</div></div>
+  </div>
+</div><div style="color:#9B59B6;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:20px 0 10px">Value Picks</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;BOS at PIT&quot;, &quot;pick&quot;: &quot;BOS&quot;, &quot;pick_logo&quot;: &quot;bos&quot;, &quot;away_logo&quot;: &quot;bos&quot;, &quot;home_logo&quot;: &quot;pit&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 56, &quot;prob&quot;: &quot;43.3%&quot;, &quot;pick_odds&quot;: &quot;-103.0&quot;, &quot;away_sp&quot;: &quot;Patrick Sandoval&quot;, &quot;home_sp&quot;: &quot;Lake Bachar&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors BOS, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;43.3%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;49.5%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;6.2&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.7&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.0 (-113)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 52%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;BOS 4.8 at PIT 3.9&quot;, &quot;ou_lean&quot;: &quot;OVER 0.7 runs (proj 8.7 vs line 8.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/bos.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="BOS">
+        <span style="color:#8A9BAD;font-size:11px">BOS</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/pit.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="PIT">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">PIT</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Patrick Sandoval <span style="color:#4A5568">vs</span> Lake Bachar
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:56%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">56% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/bos.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="BOS">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          BOS
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-103.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">BOS 4.8 at PIT 3.9</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.7</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.9</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 52%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.7 runs (proj 8.7 vs line 8.0)">O 8.0 (-113)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">49.5%</div></div>
+  </div>
+</div><div style="color:#4A5568;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:20px 0 10px">Full Board</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;TEX at OAK&quot;, &quot;pick&quot;: &quot;TEX&quot;, &quot;pick_logo&quot;: &quot;tex&quot;, &quot;away_logo&quot;: &quot;tex&quot;, &quot;home_logo&quot;: &quot;oak&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 58, &quot;prob&quot;: &quot;42.0%&quot;, &quot;pick_odds&quot;: &quot;-129.0&quot;, &quot;away_sp&quot;: &quot;Cody Bradford&quot;, &quot;home_sp&quot;: &quot;Jacob Lopez&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors TEX, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;42.0%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;44.6%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;2.6&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.6&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 9.5 (+107)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;TEX 5.2 at OAK 4.4&quot;, &quot;ou_lean&quot;: &quot;OVER 0.1 runs (proj 9.6 vs line 9.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/tex.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="TEX">
+        <span style="color:#8A9BAD;font-size:11px">TEX</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/oak.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="OAK">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">OAK</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Cody Bradford <span style="color:#4A5568">vs</span> Jacob Lopez
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:58%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">58% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/tex.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="TEX">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          TEX
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-129.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">TEX 5.2 at OAK 4.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.8</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.1 runs (proj 9.6 vs line 9.5)">O 9.5 (+107)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">44.6%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;ARI at ATL&quot;, &quot;pick&quot;: &quot;ATL&quot;, &quot;pick_logo&quot;: &quot;atl&quot;, &quot;away_logo&quot;: &quot;ari&quot;, &quot;home_logo&quot;: &quot;atl&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 56, &quot;prob&quot;: &quot;56.9%&quot;, &quot;pick_odds&quot;: &quot;-120.0&quot;, &quot;away_sp&quot;: &quot;Michael Soroka&quot;, &quot;home_sp&quot;: &quot;Bryce Elder&quot;, &quot;narrative&quot;: [&quot;ATL benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;56.9%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;53.9%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;3.0&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.3&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 9.0 (-105)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 51%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;ARI 4.5 at ATL 4.7&quot;, &quot;ou_lean&quot;: &quot;OVER 0.3 runs (proj 9.3 vs line 9.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/ari.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="ARI">
+        <span style="color:#8A9BAD;font-size:11px">ARI</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/atl.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="ATL">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">ATL</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Michael Soroka <span style="color:#4A5568">vs</span> Bryce Elder
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:56%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">56% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/atl.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="ATL">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          ATL
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-120.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">ARI 4.5 at ATL 4.7</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.3</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.2</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 51%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.3 runs (proj 9.3 vs line 9.0)">O 9.0 (-105)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">53.9%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;COL at SFG&quot;, &quot;pick&quot;: &quot;SFG&quot;, &quot;pick_logo&quot;: &quot;sfg&quot;, &quot;away_logo&quot;: &quot;col&quot;, &quot;home_logo&quot;: &quot;sfg&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 56, &quot;prob&quot;: &quot;56.6%&quot;, &quot;pick_odds&quot;: &quot;-124.0&quot;, &quot;away_sp&quot;: &quot;Gabriel Hughes&quot;, &quot;home_sp&quot;: &quot;Blade Tidwell&quot;, &quot;narrative&quot;: [&quot;SFG benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;56.6%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;54.8%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;1.8&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.7&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.0 (-105)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;COL 4.1 at SFG 4.6&quot;, &quot;ou_lean&quot;: &quot;OVER 0.7 runs (proj 8.7 vs line 8.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/col.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="COL">
+        <span style="color:#8A9BAD;font-size:11px">COL</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/sf.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="SFG">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">SFG</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Gabriel Hughes <span style="color:#4A5568">vs</span> Blade Tidwell
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:56%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">56% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/sf.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="SFG">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          SFG
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-124.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">COL 4.1 at SFG 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.7</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.7 runs (proj 8.7 vs line 8.0)">O 8.0 (-105)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">54.8%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;BAL at TBR&quot;, &quot;pick&quot;: &quot;TBR&quot;, &quot;pick_logo&quot;: &quot;tbr&quot;, &quot;away_logo&quot;: &quot;bal&quot;, &quot;home_logo&quot;: &quot;tbr&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 55, &quot;prob&quot;: &quot;55.9%&quot;, &quot;pick_odds&quot;: &quot;&quot;, &quot;away_sp&quot;: &quot;Trevor Rogers&quot;, &quot;home_sp&quot;: &quot;Freddy Peralta&quot;, &quot;narrative&quot;: [&quot;TBR benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;55.9%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.6&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;BAL 4.0 at TBR 4.6&quot;, &quot;ou_lean&quot;: &quot;&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/bal.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="BAL">
+        <span style="color:#8A9BAD;font-size:11px">BAL</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/tb.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="TBR">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">TBR</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Trevor Rogers <span style="color:#4A5568">vs</span> Freddy Peralta
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:55%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">55% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/tb.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="TBR">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          TBR
+          
+          
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">BAL 4.0 at TBR 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 50%</div>
+    </div>
+    
+    
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;CHW at DET&quot;, &quot;pick&quot;: &quot;DET&quot;, &quot;pick_logo&quot;: &quot;det&quot;, &quot;away_logo&quot;: &quot;chw&quot;, &quot;home_logo&quot;: &quot;det&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 55, &quot;prob&quot;: &quot;55.7%&quot;, &quot;pick_odds&quot;: &quot;-111.0&quot;, &quot;away_sp&quot;: &quot;Sean Burke&quot;, &quot;home_sp&quot;: &quot;Drew Anderson&quot;, &quot;narrative&quot;: [&quot;DET benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;55.7%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;51.9%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;3.8&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.7&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.0 (-107)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 52%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;CHW 4.1 at DET 4.6&quot;, &quot;ou_lean&quot;: &quot;OVER 0.7 runs (proj 8.7 vs line 8.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/chw.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CHW">
+        <span style="color:#8A9BAD;font-size:11px">CHW</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/det.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="DET">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">DET</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Sean Burke <span style="color:#4A5568">vs</span> Drew Anderson
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:55%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">55% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/det.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="DET">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          DET
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-111.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">CHW 4.1 at DET 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.7</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 52%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.7 runs (proj 8.7 vs line 8.0)">O 8.0 (-107)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">51.9%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;SEA at HOU&quot;, &quot;pick&quot;: &quot;HOU&quot;, &quot;pick_logo&quot;: &quot;hou&quot;, &quot;away_logo&quot;: &quot;sea&quot;, &quot;home_logo&quot;: &quot;hou&quot;, &quot;tier&quot;: &quot;B&quot;, &quot;conf&quot;: 55, &quot;prob&quot;: &quot;55.3%&quot;, &quot;pick_odds&quot;: &quot;-118.0&quot;, &quot;away_sp&quot;: &quot;Bryan Woo&quot;, &quot;home_sp&quot;: &quot;Hunter Brown&quot;, &quot;narrative&quot;: [&quot;HOU benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;55.3%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;53.2%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;2.1&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.6&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.0 (-102)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;SEA 4.0 at HOU 4.6&quot;, &quot;ou_lean&quot;: &quot;OVER 0.6 runs (proj 8.6 vs line 8.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#4A9EBF'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/sea.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="SEA">
+        <span style="color:#8A9BAD;font-size:11px">SEA</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/hou.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="HOU">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">HOU</span>
+        <span style="background:#4A9EBF;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">MED</span>
+        
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Bryan Woo <span style="color:#4A5568">vs</span> Hunter Brown
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:55%;height:100%;background:#4A9EBF;border-radius:2px"></div>
+        </div>
+        <span style="color:#4A9EBF;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">55% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/hou.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="HOU">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          HOU
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-118.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">SEA 4.0 at HOU 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.6 runs (proj 8.6 vs line 8.0)">O 8.0 (-102)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">53.2%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;WSN at NYM&quot;, &quot;pick&quot;: &quot;NYM&quot;, &quot;pick_logo&quot;: &quot;nym&quot;, &quot;away_logo&quot;: &quot;wsn&quot;, &quot;home_logo&quot;: &quot;nym&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 54, &quot;prob&quot;: &quot;54.3%&quot;, &quot;pick_odds&quot;: &quot;-157.0&quot;, &quot;away_sp&quot;: &quot;Jake Irvin&quot;, &quot;home_sp&quot;: &quot;Christian Scott&quot;, &quot;narrative&quot;: [&quot;NYM benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;54.3%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;60.2%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;-5.9&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.5&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;U 8.5 (+103)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;WSN 4.1 at NYM 4.4&quot;, &quot;ou_lean&quot;: &quot;UNDER 0.0 runs (proj 8.5 vs line 8.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="WSN">
+        <span style="color:#8A9BAD;font-size:11px">WSN</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/nym.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="NYM">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">NYM</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Jake Irvin <span style="color:#4A5568">vs</span> Christian Scott
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:54%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">54% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/nym.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="NYM">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          NYM
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-157.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">WSN 4.1 at NYM 4.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.5</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.3</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#4A9EBF;font-size:12px;font-weight:600" title="UNDER 0.0 runs (proj 8.5 vs line 8.5)">U 8.5 (+103)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">60.2%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;MIA at CIN&quot;, &quot;pick&quot;: &quot;CIN&quot;, &quot;pick_logo&quot;: &quot;cin&quot;, &quot;away_logo&quot;: &quot;mia&quot;, &quot;home_logo&quot;: &quot;cin&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 53, &quot;prob&quot;: &quot;53.0%&quot;, &quot;pick_odds&quot;: &quot;111.0&quot;, &quot;away_sp&quot;: &quot;Eury P\u00e9rez&quot;, &quot;home_sp&quot;: &quot;Nick Lodolo&quot;, &quot;narrative&quot;: [&quot;CIN benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;53.0%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;46.7%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;6.3&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.8&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.5 (+103)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;MIA 4.2 at CIN 4.6&quot;, &quot;ou_lean&quot;: &quot;OVER 0.3 runs (proj 8.8 vs line 8.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/mia.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="MIA">
+        <span style="color:#8A9BAD;font-size:11px">MIA</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/cin.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CIN">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">CIN</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Eury Pérez <span style="color:#4A5568">vs</span> Nick Lodolo
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:53%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">53% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/cin.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CIN">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          CIN
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>111.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">MIA 4.2 at CIN 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.8</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">0.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.3 runs (proj 8.8 vs line 8.5)">O 8.5 (+103)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">46.7%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;SDP at CLE&quot;, &quot;pick&quot;: &quot;SDP&quot;, &quot;pick_logo&quot;: &quot;sdp&quot;, &quot;away_logo&quot;: &quot;sdp&quot;, &quot;home_logo&quot;: &quot;cle&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 51, &quot;prob&quot;: &quot;48.6%&quot;, &quot;pick_odds&quot;: &quot;-105.0&quot;, &quot;away_sp&quot;: &quot;Casey Mize&quot;, &quot;home_sp&quot;: &quot;Tanner Bibee&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors SDP, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;48.6%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;48.9%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;0.3&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.1&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.0 (+102)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 50%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;SDP 4.8 at CLE 4.3&quot;, &quot;ou_lean&quot;: &quot;OVER 1.1 runs (proj 9.1 vs line 8.0)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/sd.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="SDP">
+        <span style="color:#8A9BAD;font-size:11px">SDP</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/cle.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="CLE">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">CLE</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Casey Mize <span style="color:#4A5568">vs</span> Tanner Bibee
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:51%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">51% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/sd.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="SDP">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          SDP
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-105.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">SDP 4.8 at CLE 4.3</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.1</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.5</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 50%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 1.1 runs (proj 9.1 vs line 8.0)">O 8.0 (+102)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">48.9%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;PHI at MIN&quot;, &quot;pick&quot;: &quot;PHI&quot;, &quot;pick_logo&quot;: &quot;phi&quot;, &quot;away_logo&quot;: &quot;phi&quot;, &quot;home_logo&quot;: &quot;min&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 51, &quot;prob&quot;: &quot;48.7%&quot;, &quot;pick_odds&quot;: &quot;-107.0&quot;, &quot;away_sp&quot;: &quot;Andrew Painter&quot;, &quot;home_sp&quot;: &quot;Dean Kremer&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors PHI, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;48.7%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;48.8%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;0.1&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.7&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 9.5 (+103)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 53%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;PHI 5.0 at MIN 4.6&quot;, &quot;ou_lean&quot;: &quot;OVER 0.2 runs (proj 9.7 vs line 9.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/phi.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="PHI">
+        <span style="color:#8A9BAD;font-size:11px">PHI</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/min.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="MIN">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">MIN</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Andrew Painter <span style="color:#4A5568">vs</span> Dean Kremer
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:51%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">51% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/phi.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="PHI">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          PHI
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>-107.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">PHI 5.0 at MIN 4.6</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.7</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 53%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.2 runs (proj 9.7 vs line 9.5)">O 9.5 (+103)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">48.8%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;KCR at LAA&quot;, &quot;pick&quot;: &quot;LAA&quot;, &quot;pick_logo&quot;: &quot;laa&quot;, &quot;away_logo&quot;: &quot;kcr&quot;, &quot;home_logo&quot;: &quot;laa&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 51, &quot;prob&quot;: &quot;51.0%&quot;, &quot;pick_odds&quot;: &quot;104.0&quot;, &quot;away_sp&quot;: &quot;Noah Cameron&quot;, &quot;home_sp&quot;: &quot;Ryan Johnson&quot;, &quot;narrative&quot;: [&quot;LAA benefits from home field advantage (~3-4% win probability boost built into the model)&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;51.0%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;48.7%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;2.3&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;9.4&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 8.5 (+107)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;YRFI 51%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;KCR 4.9 at LAA 4.5&quot;, &quot;ou_lean&quot;: &quot;OVER 0.9 runs (proj 9.4 vs line 8.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/kcr.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="KCR">
+        <span style="color:#8A9BAD;font-size:11px">KCR</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/laa.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="LAA">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">LAA</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Noah Cameron <span style="color:#4A5568">vs</span> Ryan Johnson
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:51%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">51% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/laa.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="LAA">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          LAA
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>104.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">KCR 4.9 at LAA 4.5</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">9.4</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.5</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#4A9EBF;font-size:12px;font-weight:600">YRFI 51%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 0.9 runs (proj 9.4 vs line 8.5)">O 8.5 (+107)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">48.7%</div></div>
+  </div>
+</div>
+<div onclick="openModal(this)" data-modal="{&quot;matchup&quot;: &quot;NYY at TOR&quot;, &quot;pick&quot;: &quot;NYY&quot;, &quot;pick_logo&quot;: &quot;nyy&quot;, &quot;away_logo&quot;: &quot;nyy&quot;, &quot;home_logo&quot;: &quot;tor&quot;, &quot;tier&quot;: &quot;C&quot;, &quot;conf&quot;: 50, &quot;prob&quot;: &quot;49.7%&quot;, &quot;pick_odds&quot;: &quot;110.0&quot;, &quot;away_sp&quot;: &quot;Ryan Weathers&quot;, &quot;home_sp&quot;: &quot;Dylan Cease&quot;, &quot;narrative&quot;: [&quot;The model&#39;s combination of Elo rating, recent form, and pitching quality collectively favors NYY, though no single factor stands out strongly.&quot;], &quot;key_stats&quot;: [[&quot;Elo gap&quot;, &quot;\u2014&quot;, &quot;points \u2014 positive favors home&quot;], [&quot;Home win prob&quot;, &quot;49.7%&quot;, &quot;model estimate&quot;], [&quot;Market home prob&quot;, &quot;53.2%&quot;, &quot;devigged consensus&quot;], [&quot;Edge&quot;, &quot;3.5&quot;, &quot;points vs market&quot;], [&quot;Home starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Away starter FIP&quot;, &quot;\u2014&quot;, &quot;prior-season&quot;], [&quot;Home in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Away in-season FIP&quot;, &quot;\u2014&quot;, &quot;last 6 starts&quot;], [&quot;Home recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Away recent W%&quot;, &quot;\u2014&quot;, &quot;last 10 games&quot;], [&quot;Park factor&quot;, &quot;\u2014&quot;, &quot;>1 = hitter-friendly&quot;], [&quot;Temperature&quot;, &quot;\u2014\u00b0C&quot;, &quot;at game time&quot;], [&quot;Wind&quot;, &quot;\u2014 km/h&quot;, &quot;at game time&quot;], [&quot;Home lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Away lineup delta&quot;, &quot;\u2014&quot;, &quot;vs team average OPS&quot;], [&quot;Home bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Away bullpen FIP&quot;, &quot;\u2014&quot;, &quot;rolling&quot;], [&quot;Proj total&quot;, &quot;8.3&quot;, &quot;runs&quot;], [&quot;Book O/U&quot;, &quot;O 6.5 (-109)&quot;, &quot;&quot;], [&quot;1st inning lean&quot;, &quot;NRFI 54%&quot;, &quot;&quot;]], &quot;proj_score&quot;: &quot;NYY 4.4 at TOR 3.9&quot;, &quot;ou_lean&quot;: &quot;OVER 1.8 runs (proj 8.3 vs line 6.5)&quot;}"
+style="background:#14202C;border:1px solid #2A3A4A;border-left:3px solid #2A3A4A;
+border-radius:6px;padding:16px 20px;margin-bottom:10px;position:relative;
+cursor:pointer;transition:border-color 0.15s"
+onmouseenter="this.style.borderColor='#8A9BAD'"
+onmouseleave="this.style.borderColor='#2A3A4A'"
+onmouseleave="this.style.borderColor='#2A3A4A';this.style.borderLeftColor='#2A3A4A'"
+>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:180px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/nyy.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="NYY">
+        <span style="color:#8A9BAD;font-size:11px">NYY</span>
+        <span style="color:#4A5568;font-size:11px">at</span>
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/tor.png&h=44&w=44" width="22" height="22" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="TOR">
+        <span style="color:#E8EDF2;font-size:13px;font-weight:600">TOR</span>
+        <span style="background:#8A9BAD;color:#0F1923;padding:1px 7px;border-radius:3px;
+        font-size:10px;font-weight:800;letter-spacing:0.08em">LOW</span>
+        <span style="background:rgba(74,158,191,0.12);color:#4A9EBF;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:700;letter-spacing:0.05em">LINEUPS LIVE</span>
+      </div>
+      <div style="color:#8A9BAD;font-size:12px;margin-bottom:8px">
+        Ryan Weathers <span style="color:#4A5568">vs</span> Dylan Cease
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="flex:1;height:4px;background:#1E2D3D;border-radius:2px;max-width:160px">
+          <div style="width:50%;height:100%;background:#8A9BAD;border-radius:2px"></div>
+        </div>
+        <span style="color:#8A9BAD;font-size:12px;font-weight:700;
+        font-family:'JetBrains Mono',monospace">50% conf</span>
+      </div>
+    </div>
+    <div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:10px">
+      <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/nyy.png&h=72&w=72" width="36" height="36" style="object-fit:contain;vertical-align:middle" onerror="this.style.display='none'" alt="NYY">
+      <div>
+        <div style="color:#E8EDF2;font-size:18px;font-weight:800;
+        font-family:'JetBrains Mono',monospace;margin-bottom:2px">
+          NYY
+          
+          &nbsp;<span style='color:#8A9BAD;font-size:13px;font-weight:400'>110.0</span>
+        </div>
+        <div style="color:#4A5568;font-size:11px">PICK</div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;border-top:1px solid #1E2D3D;padding-top:10px">
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Proj Score</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">NYY 4.4 at TOR 3.9</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Total</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">8.3</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Margin</div>
+      <div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">-0.5</div>
+    </div>
+    <div>
+      <div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">1st Inn</div>
+      <div style="color:#E84545;font-size:12px;font-weight:600">NRFI 54%</div>
+    </div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">O/U</div><div style="color:#F5A623;font-size:12px;font-weight:600" title="OVER 1.8 runs (proj 8.3 vs line 6.5)">O 6.5 (-109)</div></div>
+    <div><div style="color:#4A5568;font-size:10px;letter-spacing:0.06em;text-transform:uppercase">Mkt Home</div><div style="color:#8A9BAD;font-size:12px;font-family:'JetBrains Mono',monospace">53.2%</div></div>
+  </div>
+</div>
 </div>
 <div id="history" class="panel">
   <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
@@ -245,7 +1220,7 @@ function show(id,tab){
 }
 
 // ---- snapshot data baked in by Python ----
-const SNAP_PICKS = [];
+const SNAP_PICKS = [{"matchup": "STL at CHC", "pick": "CHC", "away_sp": "Hunter Dobbins", "home_sp": "Edward Cabrera", "best_bet": 1, "ev_bet": 0, "conf": 62, "stake": "", "pick_odds": "-174.0", "ev_adj": "-1.7%", "ou_line": "O 9.0 (+103)", "fi": "YRFI 53%"}, {"matchup": "MIL at LAD", "pick": "MIL", "away_sp": "Logan Henderson", "home_sp": "Tarik Skubal", "best_bet": 0, "ev_bet": 1, "conf": 50, "stake": "", "pick_odds": "167.0", "ev_adj": "+8.5%", "ou_line": "O 7.5 (+107)", "fi": "NRFI 54%"}];
 const SNAP_DATE  = "2026-08-16";
 const SNAP_RECORD = {"n": 243, "wins": 133};
 
