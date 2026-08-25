@@ -4,3 +4,11 @@ data/
 models/
 __pycache__/
 *.pyc
+*.py
+*.bat
+*.md
+predictions_*.csv
+logs/
+requirements.txt
+nfl_stadiums.csv
+github_pages_url.txt
