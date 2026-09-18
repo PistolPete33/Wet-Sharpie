@@ -14,26 +14,39 @@ body{background:#0F1923;color:#E8EDF2;font-family:'Inter',system-ui,sans-serif;m
 .tab{padding:12px 20px;color:#4A5568;font-size:13px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;letter-spacing:0.02em}
 .tab:hover{color:#8A9BAD} .tab.active{color:#F5A623;border-bottom-color:#F5A623}
 .panel{display:none} .panel.active{display:block}
+.card.clickable{cursor:pointer;transition:transform 0.12s, border-color 0.12s}
+.card.clickable:hover{transform:translateY(-2px);border-color:#F5A623}
 .inner{padding:28px 32px;max-width:1100px;margin:0 auto}
 iframe{width:100%;height:calc(100vh - 100px);border:none;display:block;background:#0F1923}
 @media(max-width:600px){.header{padding:12px 16px}.inner{padding:16px}.tabs{padding:0 16px}}
 </style></head><body>
 <div class="header">
   <div class="logo">WET <span>SHARPIE</span></div>
-  <div class="meta">Updated Sep 18, 2026 12:29 PM</div>
+  <div class="meta">Updated Sep 18, 2026 12:35 PM</div>
 </div>
 <div class="tabs">
-  <div class="tab active" onclick="show('overview',this)">Overview</div>
-  <div class="tab" onclick="show('mlb',this)">⚾ MLB</div>
-  <div class="tab" onclick="show('nfl',this)">🏈 NFL</div>
+  <div class="tab active" data-panel="overview" onclick="show('overview',this)">Overview</div>
+  <div class="tab" data-panel="mlb" onclick="show('mlb',this)">⚾ MLB</div>
+  <div class="tab" data-panel="nfl" onclick="show('nfl',this)">🏈 NFL</div>
 </div>
 <div id="overview" class="panel active"><div class="inner">
+  <div style="color:#4A5568;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px">Today at a glance</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px"><div class="card clickable" onclick="goTo('mlb')" style="background:#14202C;border:1px solid #1E2D3D;border-left:3px solid #27AE60;border-radius:6px;padding:12px 16px;flex:1;min-width:240px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+  <div><div style="color:#27AE60;font-size:9px;font-weight:800;letter-spacing:0.1em;margin-bottom:4px">MLB BEST BET</div>
+       <div style="color:#E8EDF2;font-size:13px;font-weight:600">PIT · KCR at PIT</div></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#27AE60;font-weight:800">62%</div>
+</div><div class="card clickable" onclick="goTo('nfl')" style="background:#14202C;border:1px solid #1E2D3D;border-left:3px solid #F5A623;border-radius:6px;padding:12px 16px;flex:1;min-width:240px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+  <div><div style="color:#F5A623;font-size:9px;font-weight:800;letter-spacing:0.1em;margin-bottom:4px">NFL TOP CONFIDENCE (PAPER)</div>
+       <div style="color:#E8EDF2;font-size:13px;font-weight:600">GB · GB @ NYJ</div></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#F5A623;font-weight:800">74%</div>
+</div></div>
   <div style="color:#4A5568;font-size:12px;margin-bottom:18px;line-height:1.5">Every pick every sport, tracked and graded in public. <span style="color:#27AE60;font-weight:700">LIVE</span> = real tracked record. <span style="color:#F5A623;font-weight:700">PAPER TRIAL</span> = model proving itself before anything is recommended.</div>
   <div style="display:flex;gap:14px;flex-wrap:wrap">
-    <div style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
+    <div class="card clickable" onclick="goTo('mlb')" style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
     <span style="font-weight:800;font-size:15px;color:#E8EDF2">⚾ MLB</span>
     <span style="border:1px solid #27AE60;color:#27AE60;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:2px 8px;border-radius:4px">LIVE</span>
+    <span style="margin-left:auto;color:#27AE60;font-size:12px;font-weight:700">Open →</span>
   </div>
   <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #1E2D3D">
   <span style="color:#4A5568;font-size:12px">Record (all picks)</span>
@@ -45,23 +58,25 @@ iframe{width:100%;height:calc(100vh - 100px);border:none;display:block;backgroun
   <span style="color:#4A5568;font-size:12px">Best Bets</span>
   <span style="color:#27AE60;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px">43-25 (63.2%)</span>
 </div>
-  <div style="color:#4A5568;font-size:11px;margin-top:12px">Real tracked picks, graded daily. Open the MLB tab for today's slate.</div>
+  <div style="color:#4A5568;font-size:11px;margin-top:12px">Real tracked picks, graded daily. Tap for today's slate.</div>
 </div>
-    <div style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
+    <div class="card clickable" onclick="goTo('nfl')" style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
     <span style="font-weight:800;font-size:15px;color:#E8EDF2">🏈 NFL</span>
     <span style="border:1px solid #F5A623;color:#F5A623;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:2px 8px;border-radius:4px">PAPER TRIAL</span>
+    <span style="margin-left:auto;color:#F5A623;font-size:12px;font-weight:700">Open →</span>
   </div>
   <div style="display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid #1E2D3D">
   <span style="color:#4A5568;font-size:12px">Gate progress</span>
   <span style="color:#F5A623;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px">0 / 150-200 graded</span>
 </div>
-  <div style="color:#4A5568;font-size:11px;margin-top:12px">Fully tracked live trial - no recommendations until the publish gate passes.</div>
+  <div style="color:#4A5568;font-size:11px;margin-top:12px">Fully tracked live trial - tap for this week's picks.</div>
 </div>
-    <div style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
+    <div class="card" style="background:#14202C;border:1px solid #1E2D3D;border-radius:8px;padding:20px;flex:1;min-width:280px">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
     <span style="font-weight:800;font-size:15px;color:#E8EDF2">🏀 CBB</span>
     <span style="border:1px solid #4A5568;color:#4A5568;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:2px 8px;border-radius:4px">COMING SOON</span>
+    
   </div>
   <div style="color:#4A5568;font-size:12px">College basketball model in development. Slots in here when it exists.</div>
   
@@ -79,5 +94,17 @@ function show(id,tab){
   tab.classList.add('active');
   const fr=panel.querySelector('iframe');
   if(fr && !fr.src) fr.src=fr.dataset.src;   // lazy-load sport pages
+  if(location.hash !== '#'+id) history.pushState(null,'','#'+id);
 }
+function goTo(id){
+  const tab=document.querySelector(`.tab[data-panel="${id}"]`);
+  if(tab) show(id,tab);
+}
+function applyHash(){
+  const id=(location.hash||'#overview').slice(1);
+  const tab=document.querySelector(`.tab[data-panel="${id}"]`);
+  if(tab) show(id,tab);
+}
+window.addEventListener('popstate', applyHash);
+applyHash();   // deep links like /#nfl land on the right tab
 </script></body></html>
