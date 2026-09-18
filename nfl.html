@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wet Sharpie — NFL</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0F1923;color:#E8EDF2;font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.header{background:#0C1620;border-bottom:1px solid #1E2D3D;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;color:#F5A623}
+.logo span{color:#4A9EBF}
+.badge{border:1px solid #F5A623;color:#F5A623;font-size:10px;font-weight:800;letter-spacing:0.08em;padding:3px 9px;border-radius:4px;margin-left:10px}
+.meta{color:#4A5568;font-size:12px}
+.tabs{display:flex;border-bottom:1px solid #1E2D3D;padding:0 32px;background:#0C1620}
+.tab{padding:12px 20px;color:#4A5568;font-size:13px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent}
+.tab:hover{color:#8A9BAD} .tab.active{color:#F5A623;border-bottom-color:#F5A623}
+.panel{display:none;padding:26px 32px;max-width:960px;margin:0 auto} .panel.active{display:block}
+.disclaimer{background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:10px 16px;color:#4A5568;font-size:11px;margin-bottom:20px;line-height:1.5}
+@media(max-width:600px){.header{padding:12px 16px}.panel{padding:16px}.tabs{padding:0 16px}}
+</style></head><body>
+<div class="header">
+  <div><span class="logo">WET <span>SHARPIE</span> · NFL</span><span class="badge">PAPER TRIAL</span></div>
+  <div class="meta">Updated Sep 18, 2026 12:29 PM</div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="show('week',this)">This Week's Picks</div>
+  <div class="tab" onclick="show('track',this)">Trial Tracking</div>
+</div>
+<div id="week" class="panel active">
+  <div class="disclaimer">The NFL model is in a live, fully tracked paper trial — no real bets, no recommendations. Straight-up picks show the model's winner confidence. Spread and total entries are model output logged for the trial. A pick lane is promoted only if it clears the publish gate shown under Trial Tracking. Historical walk-forward vs closing lines (2015-2025): 52.4% ATS — breakeven, which is exactly why the trial exists.</div>
+  <div style="color:#4A5568;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin:4px 0 10px">Straight-Up Picks — model confidence</div><div style="display:flex;flex-direction:column;gap:8px;margin-bottom:26px"><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">GB @ NYJ</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">GB</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">74.0%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -182</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">SEA @ ARI</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">SEA</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">74.0%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -205</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">MIA @ SF</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">SF</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">69.4%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -1000</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">NO @ BAL</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">BAL</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">69.4%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -418</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">LV @ LAC</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">LAC</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">66.3%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -300</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">IND @ KC</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">KC</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">66.3%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -300</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">CLE @ TB</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">TB</span><span style="background:#27AE60;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">TOP TIER</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">65.5%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -442</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">NYG @ LA</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">LA</span><span style="background:#F5A623;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">60%+</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">62.0%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -338</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">MIN @ CHI</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">CHI</span><span style="background:#F5A623;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">60%+</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">60.7%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -218</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">PIT @ NE</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">NE</span><span style="background:#F5A623;color:#0F1923;padding:1px 7px;border-radius:3px;font-size:10px;font-weight:800;margin-left:8px">60%+</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">60.7%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -240</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">CAR @ ATL</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">CAR</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">52.9%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -149</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">CIN @ HOU</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">CIN</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">52.9%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML +124</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">PHI @ TEN</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">PHI</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">52.9%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -340</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">JAX @ DEN</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">JAX</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">52.9%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML +132</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">ATL @ GB</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">GB</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">51.8%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -305</span></div>
+</div><div style="background:#14202C;border:1px solid #1E2D3D;border-radius:6px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <div><span style="color:#4A5568;font-size:12px">WAS @ DAL</span>
+       <span style="color:#E8EDF2;font-weight:700;margin-left:10px">DAL</span></div>
+  <div style="font-family:'JetBrains Mono',monospace;color:#4A9EBF;font-weight:700">50.8%
+       <span style="color:#4A5568;font-weight:400;font-size:11px;margin-left:8px">ML -210</span></div>
+</div></div><div style="color:#4A5568;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin:4px 0 4px">Spreads — model tracking only</div>
+<div style="color:#4A5568;font-size:11px;margin-bottom:10px">Logged for the paper trial. Not recommendations while the gate is open.</div>
+<table style="width:100%;border-collapse:collapse;margin-bottom:26px;font-size:13px">
+<tr style="color:#4A5568;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;text-align:left">
+<th style="padding:6px 8px">Game</th><th style="padding:6px 8px">Model side</th><th style="padding:6px 8px">Line</th><th style="padding:6px 8px">Model #</th><th style="padding:6px 8px">Edge</th></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">CIN @ HOU</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">CIN +2.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-114</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">-2.3</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-4.8</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">CLE @ TB</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">CLE +8.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-4</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">6.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-2.5</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">GB @ NYJ</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">GB -3.2</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-105</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">-9.6</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-6.3</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">PIT @ NE</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">PIT +5.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-110</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">4.4</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-0.6</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">JAX @ DEN</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">JAX +2.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-118</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">-2.2</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-4.7</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">SEA @ ARI</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">SEA -4.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-111</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">-10.8</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-6.8</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">WAS @ DAL</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">WAS +4.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-110</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">1.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-2.5</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">MIA @ SF</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">MIA +13.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-110</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">7.2</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-5.8</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">NYG @ LA</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">NYG +7.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-115</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">5.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-1.5</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">ATL @ GB</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">ATL +6.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-115</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">2.2</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-4.3</td></tr></table><div style="color:#4A5568;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin:4px 0 4px">Totals — model tracking only</div>
+<div style="color:#4A5568;font-size:11px;margin-bottom:10px">Logged for the paper trial. Not recommendations while the gate is open.</div>
+<table style="width:100%;border-collapse:collapse;margin-bottom:26px;font-size:13px">
+<tr style="color:#4A5568;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;text-align:left">
+<th style="padding:6px 8px">Game</th><th style="padding:6px 8px">Model side</th><th style="padding:6px 8px">Line</th><th style="padding:6px 8px">Model #</th><th style="padding:6px 8px">Edge</th></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">CAR @ ATL</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">Under 43.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-110</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">43.7</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">+0.2</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">MIN @ CHI</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">Under 48.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-112</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">48.2</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">+0.2</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">GB @ NYJ</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">Under 44.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-110</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">44.6</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">+0.1</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">WAS @ DAL</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">Under 50.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-108</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">43.7</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-6.8</td></tr><tr style="border-top:1px solid #1E2D3D">
+<td style="padding:8px;color:#4A5568">MIA @ SF</td>
+<td style="padding:8px;color:#E8EDF2;font-weight:600">Under 45.0</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-107</td>
+<td style="padding:8px;color:#4A9EBF;font-family:'JetBrains Mono',monospace">44.5</td>
+<td style="padding:8px;color:#4A5568;font-family:'JetBrains Mono',monospace">-0.5</td></tr></table>
+</div>
+<div id="track" class="panel">
+  <div style="color:#4A5568;text-align:center;padding:60px">Picks are logged; grading happens after games finish.</div>
+</div>
+<script>
+function show(id,tab){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  tab.classList.add('active');
+}
+</script></body></html>
